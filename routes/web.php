@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
+    // TODO delete this
+//    return view('welcome');
 });
 
 Auth::routes();
