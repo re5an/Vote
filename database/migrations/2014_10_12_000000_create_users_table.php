@@ -20,9 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('mobile_no')->unique();
             $table->string('phone_no')->nullable();
             $table->string('national_code')->unique();
-            $table->string('state');
-            $table->string('city');
-            $table->string('gender');
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
+            $table->string('gender')->nullable();
 
             $table->string('email')->nullable();
 //            $table->string('email')->unique();

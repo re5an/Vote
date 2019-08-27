@@ -28,7 +28,12 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/register';
+	/*protected function redirectTo()
+	{
+		//FIXME redirect back with success message
+		return redirect()->back()->with('success', ['User is Registered']);
+	}*/
 
     /**
      * Create a new controller instance.
@@ -51,11 +56,10 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'last_name' => ['required', 'string', 'max:255'],
-            'mobile_no' => ['required', 'numeric', 'min:10', 'max:11', 'unique:users'],
-            'national_code' => ['required', 'numeric', 'min:10', 'max:10', 'unique:users'],
+            'mobile_no' => ['required', 'numeric', 'unique:users'],
+            'phone_no' => [ 'numeric'],
+            'national_code' => ['required', 'numeric', 'unique:users'],
 //            'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'state' => ['string', 'max:255'],
-            'city' => ['string', 'max:255'],
         ]);
     }
 
@@ -67,10 +71,18 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+//    	dd($data);
         return User::create([
             'name' => $data['name'],
+            'last_name' => $data['last_name'],
             'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'mobile_no' => $data['mobile_no'],
+            'phone_no' => $data['phone_no'],
+            'national_code' => $data['national_code'],
+            'state' => $data['state'],
+            'city' => $data['city'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['national_code']),
         ]);
     }
 }
