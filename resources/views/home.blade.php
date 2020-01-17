@@ -15,6 +15,20 @@
                     @endif
 
                     You are logged in!
+
+                    @foreach($poles as $pole)
+                            <div class="card w-95">
+                                <div class="card-body">
+                                    <h5 class="card-title"> {{$pole["title"]}}</h5>
+                                    <p class="card-text">{{$pole["description"]}}</p>
+                                    <a href="#" class="btn btn-primary">Start</a>
+                                </div>
+                            </div>
+                           <br>
+
+                    @endforeach
+
+
                 </div>
             </div>
         </div>
