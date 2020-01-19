@@ -21,7 +21,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title"> {{$pole["title"]}}</h5>
                                     <p class="card-text">{{$pole["description"]}}</p>
-                                    <a href="#" class="btn btn-primary">Start</a>
+                                    <a href="{{route('user.vote', ['user'=> Auth::user() , 'pole' => $pole])}}" class="btn btn-primary">Start</a>
                                 </div>
                             </div>
                            <br>
