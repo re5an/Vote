@@ -3,13 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-//use 'App/Questions1';
 
 class Pole extends Model
 {
     //
 	public function questions(  ) {
-		return $this->hasMany('App/Questions');
-//		return $this->hasMany('Questions::class');
+		return $this->hasMany('App\Question');
+//		return $this->hasMany('Question::class');
 	}
 }
