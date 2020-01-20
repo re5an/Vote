@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <div class="card">
                     <div class="card-header">Dashboard</div>
 
@@ -14,18 +14,50 @@
                             </div>
                         @endif
 
-                        Start this pole
+                        <div class="">
+                            <h2>Start : {{$pole->title}}</h2>
+                        </div>
 
-                        @foreach($questions as $question)
-                            <div class="card w-95">
-                                <div class="card-body">
-                                    <h5 class="card-title"> {{$question["title"]}}</h5>
-                                    {{--<p class="card-text">{{$question["description"]}}</p>--}}
+                            <hr>
+
+
+{{--                        <form method="POST" action="{{ action('VoteController@submitVote') }}">--}}
+                        <form method="POST" action="{{ route('user.submit.vote',['user'=>Auth::user(), 'pole'=>$pole->id]) }}">
+                            {{csrf_field()}}
+                            @foreach($questions as $question)
+
+                                <h3>{{$question["question"]}}</h3><br>
+                                <div class="form-check form-check-inline">
+                                    <div class="form-group">
+
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio1">{{__('Agree')}}</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio2">{{__('NOT Agree')}}</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <label class="form-check-label" for="inlineRadio3">{{__('Neither')}}</label>
+                                        </div>
+                                    </div>
+
                                 </div>
-                            </div>
-                            <br>
 
-                        @endforeach
+                                <br>
+                                <hr>
+
+                            @endforeach
+
+
+                            <div class="col-auto my-1">
+                                <button type="submit" class="btn btn-primary">{{__('Submit')}}</button>
+                            </div>
+
+                        </form>
+
 
 
                     </div>
