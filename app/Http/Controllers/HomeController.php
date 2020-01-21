@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Pole;
+use App\Poll;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,9 +24,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-    	$poles = Pole::all();
-//    	dd($poles);
-        return view('home', ['poles' => $poles]);
-//        return view('home',$poles);
+    	$polls = Poll::all();
+//    	dd($polls);
+        return view('home', ['polls' => $polls]);
+//        return view('home',$polls);
     }
 }

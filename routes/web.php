@@ -20,6 +20,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
-Route::get('/{user}/{pole}', 'VoteController@index')->name('user.vote')->middleware('auth');
-//Route::post('/{user}/{pole}', 'VoteController@submitVote')->name('user.submit.vote');
+Route::get('/{user}/{poll}', 'VoteController@index')->name('user.vote')->middleware('auth');
+//Route::post('/{user}/{poll}', 'VoteController@submitVote')->name('user.submit.vote');
 Route::post('/{user}/{id}', 'VoteController@submitVote')->name('user.submit.vote');

@@ -15,14 +15,14 @@
                         @endif
 
                         <div class="">
-                            <h2>Start : {{$pole->title}}</h2>
+                            <h2>Start : {{$poll->title}}</h2>
                         </div>
 
                             <hr>
 
 
 {{--                        <form method="POST" action="{{ action('VoteController@submitVote') }}">--}}
-                        <form method="POST" action="{{ route('user.submit.vote',['user'=>Auth::user(), 'pole'=>$pole->id]) }}">
+                        <form method="POST" action="{{ route('user.submit.vote',['user'=>Auth::user(), 'poll'=>$poll->id]) }}">
                             {{csrf_field()}}
                             @foreach($questions as $question)
 
@@ -31,15 +31,15 @@
                                     <div class="form-group">
 
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <input class="form-check-input" type="radio" name="question{{$question->id}}" id="inlineRadio1" value="agree">
                                             <label class="form-check-label" for="inlineRadio1">{{__('Agree')}}</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <input class="form-check-input" type="radio" name="question{{$question->id}}" id="inlineRadio2" value="notAgree">
                                             <label class="form-check-label" for="inlineRadio2">{{__('NOT Agree')}}</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                            <input class="form-check-input" type="radio" name="question{{$question->id}}" id="inlineRadio3" value="Neither">
                                             <label class="form-check-label" for="inlineRadio3">{{__('Neither')}}</label>
                                         </div>
                                     </div>

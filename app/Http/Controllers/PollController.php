@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Pole;
+use App\Poll;
 use Illuminate\Http\Request;
 
-class PoleController extends Controller
+class PollController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PoleController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pole  $pole
+     * @param  \App\Poll  $poll
      * @return \Illuminate\Http\Response
      */
-    public function show(Pole $pole)
+    public function show(Poll $poll)
     {
         //
     }
@@ -52,10 +52,10 @@ class PoleController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pole  $pole
+     * @param  \App\Poll  $poll
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pole $pole)
+    public function edit(Poll $poll)
     {
         //
     }
@@ -64,10 +64,10 @@ class PoleController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pole  $pole
+     * @param  \App\Poll  $poll
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pole $pole)
+    public function update(Request $request, Poll $poll)
     {
         //
     }
@@ -75,10 +75,10 @@ class PoleController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pole  $pole
+     * @param  \App\Poll  $poll
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pole $pole)
+    public function destroy(Poll $poll)
     {
         //
     }

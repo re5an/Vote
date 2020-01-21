@@ -11,7 +11,7 @@ class Question extends Model
     	return $this->belongsToMany(User::class , 'user_questions')->withPivot('answer');
     }
 
-	public function pole(  ) {
-		return $this->belongsTo('Pole::class');
+	public function poll(  ) {
+		return $this->belongsTo('Poll::class');
     }
 }

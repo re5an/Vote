@@ -16,12 +16,12 @@
 
                     You are logged in!
 
-                    @foreach($poles as $pole)
+                    @foreach($polls as $poll)
                             <div class="card w-95">
                                 <div class="card-body">
-                                    <h5 class="card-title"> {{$pole["title"]}}</h5>
-                                    <p class="card-text">{{$pole["description"]}}</p>
-                                    <a href="{{route('user.vote', ['user'=> Auth::user() , 'pole' => $pole])}}" class="btn btn-primary">Start</a>
+                                    <h5 class="card-title"> {{$poll["title"]}}</h5>
+                                    <p class="card-text">{{$poll["description"]}}</p>
+                                    <a href="{{route('user.vote', ['user'=> Auth::user() , 'poll' => $poll])}}" class="btn btn-primary">Start</a>
                                 </div>
                             </div>
                            <br>

@@ -16,8 +16,8 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
             $table->string('question');
-            $table->unsignedInteger('pole_id');
-            $table->foreign('pole_id')->references('id')->on('poles')->onDelete('cascade');
+            $table->unsignedInteger('poll_id');
+            $table->foreign('poll_id')->references('id')->on('polls')->onDelete('cascade');
             $table->timestamps();
         });
     }
