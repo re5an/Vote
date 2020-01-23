@@ -16,7 +16,8 @@ class CreateUserQuestionsTable extends Migration
         Schema::create('user_questions', function (Blueprint $table) {
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('question_id');
-	        $table->unsignedInteger('answer');
+	        $table->string('answer');
+//	        $table->unsignedInteger('answer');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
